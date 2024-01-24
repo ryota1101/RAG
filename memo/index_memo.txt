@@ -1,0 +1,17 @@
+PUT /document_vectors
+{
+  "mappings": {
+    "properties": {
+      "document_id": {
+        "type": "keyword"
+      },
+      "text": {
+        "type": "text"
+      },
+      "vector": {
+        "type": "dense_vector",
+        "dims": 1536
+      }
+    }
+  }
+}

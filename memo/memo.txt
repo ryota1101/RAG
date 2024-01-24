@@ -1,0 +1,35 @@
+環境構築
+(pip install pipenv)
+pipenv install
+pipenv shell
+
+Elasticsearch準備
+参考1 : https://qiita.com/nskydiving/items/1c2dc4e0b9c98d164329
+参考2 : https://hosochin.com/2023/05/23/post-1967/
+
+1.ダウンロード、解答、移動
+Elasticsearch : https://www.elastic.co/jp/downloads/elasticsearch
+
+2.日本語プラグインをインストール
+$ bin/elasticsearch-plugin install analysis-kuromoji
+
+3.設定編集
+    1. config/elasticsearch.yml を修正する
+    2. `xpack.security.enabled`が`true`になっていると思うので、`false`に変更する
+
+4.起動
+$ bin/elasticsearch
+http://localhost:9200/ にアクセス
+
+
+Kibana準備
+1.インストール
+https://www.elastic.co/jp/downloads/kibana
+
+2.移動、起動
+$ bin/kibana
+http://localhost:5601/ にアクセス
+
+3.マッピングを追加
+    1.http://localhost:5601/app/dev_tools#/console
+    2.memo/index_memo.txtをコピペ、実行
